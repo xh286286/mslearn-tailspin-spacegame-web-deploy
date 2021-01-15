@@ -53,9 +53,7 @@ stages:
         arguments: '--no-restore --configuration $(buildConfiguration)'
         projects: '**/*.csproj'
 
-  - job: 'Publish'
-    displayName: 'Publish job'
-    steps:  
+
     - task: DotNetCoreCLI@2
       displayName: 'Publish the project - $(buildConfiguration)'
       inputs:
@@ -64,7 +62,9 @@ stages:
         publishWebProjects: false
         arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
         zipAfterPublish: true
-
+  - job: 'Publish'
+    displayName: 'Publish job'
+    steps:  
     - publish: '$(Build.ArtifactStagingDirectory)'
       artifact: drop
 
