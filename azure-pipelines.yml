@@ -70,7 +70,7 @@ stages:
 
 - stage: 'Deploy'
   displayName: 'Deploy the web application'
-  dependsOn: Build
+  dependsOn: Build_and_publish
   jobs:
   - deployment: Deploy
     pool:
