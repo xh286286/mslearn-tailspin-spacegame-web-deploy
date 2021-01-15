@@ -10,7 +10,7 @@ variables:
   buildConfiguration: 'Release'
 
 stages:
-- stage: 'Build and publish'
+- stage: 'Build_and_publish'
   displayName: 'Build and publish the web application'
   jobs: 
   - job: 'Build'
