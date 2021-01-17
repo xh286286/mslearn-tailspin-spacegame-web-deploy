@@ -21,6 +21,7 @@ stages:
       dotnetSdkVersion: '3.1.300'
 
     steps:
+    - script: echo $taaa
     - task: UseDotNet@2
       displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
       inputs:
